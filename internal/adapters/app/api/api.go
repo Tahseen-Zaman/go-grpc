@@ -14,7 +14,7 @@ func NewAPIAdapter(arithmeticPort ports.ArithmeticPort, dbAdapter ports.DBPort) 
 	}
 }
 
-func (apia *APIAdapter) GetAddition(a, b int) (int, error) {
+func (apia *APIAdapter) GetAddition(a, b int32) (int32, error) {
 	result, err := apia.ArithmeticPort.Addition(a, b)
 	if err != nil {
 		return 0, err
@@ -25,7 +25,7 @@ func (apia *APIAdapter) GetAddition(a, b int) (int, error) {
 	return result, nil
 }
 
-func (apia *APIAdapter) GetSubtraction(a, b int) (int, error) {
+func (apia *APIAdapter) GetSubtraction(a, b int32) (int32, error) {
 	result, err := apia.ArithmeticPort.Subtraction(a, b)
 	if err != nil {
 		return 0, err
@@ -36,7 +36,7 @@ func (apia *APIAdapter) GetSubtraction(a, b int) (int, error) {
 	return result, nil
 }
 
-func (apia *APIAdapter) GetMultiplication(a, b int) (int, error) {
+func (apia *APIAdapter) GetMultiplication(a, b int32) (int32, error) {
 	result, err := apia.ArithmeticPort.Multiplication(a, b)
 	if err != nil {
 		return 0, err
@@ -47,7 +47,7 @@ func (apia *APIAdapter) GetMultiplication(a, b int) (int, error) {
 	return result, nil
 }
 
-func (apia *APIAdapter) GetDivision(a, b int) (int, error) {
+func (apia *APIAdapter) GetDivision(a, b int32) (int32, error) {
 	result, err := apia.ArithmeticPort.Division(a, b)
 	if err != nil {
 		return 0, err

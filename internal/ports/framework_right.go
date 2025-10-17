@@ -2,5 +2,5 @@ package ports
 
 type DBPort interface {
 	CloseConnection()
-	SaveAnswerToHistory(answer int, operation string) error
+	SaveAnswerToHistory(answer int32, operation string) error
 }
