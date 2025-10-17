@@ -32,7 +32,7 @@ func (dbAdapter *DBAdapter) CloseConnection() {
 	dbAdapter.db.Close()
 }
 
-func (dbAdapter *DBAdapter) SaveAnswerToHistory(answer int, operation string) error {
+func (dbAdapter *DBAdapter) SaveAnswerToHistory(answer int32, operation string) error {
 	now := time.Now()
 	queryString, args, err := sq.Insert("arith_history").Columns("date", "answer", "operation").
 		Values(now, answer, operation).ToSql()
